@@ -15,4 +15,4 @@ mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
 newsArticleModel = mongoose.model('dailynews', newsArticleSchema)
 
 
-exports.newsArticleModel = newsArticleModel;
+module.exports = newsArticleModel;
