@@ -12,7 +12,7 @@ app.get("/newFeeds", async function(req,res){
     try{
         let limit = (isNaN(req.query.limit) || null || undefined || req.query.limit < 0) ? 10 : req.query.limit;
         let offset = (isNaN(req.query.offset) || null || undefined || req.query.offset < 0) ? 0 : req.query.offset;
-        let data = await newsArticleModel.find().limit(Number(limit)).skip(Number(offset));
+        let data = await newsArticleModel.find().skip(Number(offset)).limit(Number(limit));
         res.send(data);
     }catch(error){
         res.send(error.message);
